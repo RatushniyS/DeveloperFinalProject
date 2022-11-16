@@ -41,4 +41,4 @@ string[] Condition(string[] input, int n)
         }
     }
     return output;
-}
+} 
