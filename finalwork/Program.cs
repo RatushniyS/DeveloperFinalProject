@@ -3,3 +3,42 @@
 // При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
 
 
+Console.Clear();
+System.Console.WriteLine();
+
+string[] array = Input();
+string[] result = Condition(array, 4);
+Console.WriteLine($"[{string.Join(", ", result)}]");
+
+string[] Input()
+{
+    Console.Write("Введите данные через пробел:  ");
+    return Console.ReadLine().Split(" ");
+}
+
+int OutputLength(string[] input, int n)
+{
+    int count = 0;
+    for (int i = 0; i < input.Length; i++)
+    {
+        if (input[i].Length < n)
+            count++;
+    }
+    return count;
+
+}
+
+string[] Condition(string[] input, int n)
+{
+    string[] output = new string[OutputLength(input, n)];
+
+    for (int i = 0, j = 0; i < input.Length; i++)
+    {
+        if (input[i].Length < n)
+        {
+            output[j] = array[i];
+            j++;
+        }
+    }
+    return output;
+}
